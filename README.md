@@ -48,6 +48,9 @@ Before you start, make sure you have the following installed:
     # MongoDB database name
     MONGO_DATABASE=your_database_name
 
+    # Host address (exp: http://localhost:3000)
+    NEXT_PUBLIC_API_URL=http://<host>:<port>
+
     Replace <host>, and <port> with your MongoDB connection details.
 
 4. Running Project
@@ -56,9 +59,9 @@ Before you start, make sure you have the following installed:
     ```bash
     docker-compose up -d
    
-   This will:
-	•	Spin up a MongoDB instance on localhost:27017.
-	•	Start the Next.js development server on http://localhost:3000.
+This will:
+•	Spin up a MongoDB instance on localhost:27017.
+•	Start the Next.js development server on http://localhost:3000.
 
 
 ## Explanation of Folders
