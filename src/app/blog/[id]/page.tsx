@@ -1,14 +1,8 @@
 import { FC } from "react";
 import { getPost } from "@/lib/api/posts";
-import { Post } from "@/types/general";
+import { Params, Post } from "@/types/general";
 
-interface PostPageProps {
-  params: Promise<{ 
-    id: string
-  }>
-}
-
-const PostPage: FC<PostPageProps> = async ({ params }) => {
+const PostPage: FC<Params> = async ({ params }) => {
   const p = await params
   const post: Post = await getPost(p.id)
 

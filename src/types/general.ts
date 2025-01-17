@@ -1,3 +1,8 @@
+export interface Params {
+    params: Promise<{ 
+      id: string
+    }>
+  }
 export interface Post {
     _id: string
     title: string;

@@ -11,11 +11,11 @@ export async function GET() {
 }
 
 // Create a new post
-// export async function POST(request: Request) {
-//   await dbConnect();
+export async function POST(request: Request) {
+  await dbConnect();
 
-//   const body = await request.json();
-//   const newPost = await Post.create(body);
+  const body = await request.json();
+  const newPost = await Post.create(body);
 
-//   return NextResponse.json(newPost, { status: 201 });
-// }
+  return NextResponse.json(newPost, { status: 201 });
+}

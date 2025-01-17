@@ -1,17 +1,18 @@
-// import Post from '@/models/Post';
-// import { NextResponse } from 'next/server';
+import Post from '@/models/Post';
+import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongoose'
+import { Params } from '@/types/general';
 
-export async function GET(_: Request) {
+export async function GET(_: Request, params: Params) {
   await dbConnect();
-  // const { id } = _;
-  console.log(_)
-  
-  // const post = await Post.find({ id });
 
-  // if (!post) {
-  //   return NextResponse.json({ error: 'Post not found' }, { status: 404 });
-  // }
+  const { id } = await params.params;
 
-  // return NextResponse.json(post);
+  const post = await Post.findOne({ _id: id });
+
+  if (!post) {
+    return NextResponse.json({ error: 'Post not found' }, { status: 404 });
+  }
+
+  return NextResponse.json(post);
 }
